@@ -1,0 +1,514 @@
+<html>
+
+<head>
+<title> Trading  </title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="el-banker website">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="mahmoud mustafa - mohamed madeh">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=' rel='stylesheet'>
+    <link rel="icon" type="images/x-icon" href="media/logo2.png" />
+
+    <link rel="stylesheet" href="trading.css">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+  (function ($) {
+    $(function () {
+
+      $(window).on('scroll', function () {
+        fnOnScroll();
+      });
+
+      $(window).on('resize', function () {
+        fnOnResize();
+      });
+
+      var agTimeline = $('.js-timeline'),
+        agTimelineLine = $('.js-timeline_line'),
+        agTimelineLineProgress = $('.js-timeline_line-progress'),
+        agTimelinePoint = $('.js-timeline-card_point-box'),
+        agTimelineItem = $('.js-timeline_item'),
+        agOuterHeight = $(window).outerHeight(),
+        agHeight = $(window).height(),
+        f = -1,
+        agFlag = false;
+
+      function fnOnScroll() {
+        agPosY = $(window).scrollTop();
+
+        fnUpdateFrame();
+      }
+
+      function fnOnResize() {
+        agPosY = $(window).scrollTop();
+        agHeight = $(window).height();
+
+        fnUpdateFrame();
+      }
+
+      function fnUpdateWindow() {
+        agFlag = false;
+
+        agTimelineLine.css({
+          top: agTimelineItem.first().find(agTimelinePoint).offset().top - agTimelineItem.first().offset().top,
+          bottom: agTimeline.offset().top + agTimeline.outerHeight() - agTimelineItem.last().find(agTimelinePoint).offset().top
+        });
+
+        f !== agPosY && (f = agPosY, agHeight, fnUpdateProgress());
+      }
+
+      function fnUpdateProgress() {
+        var agTop = agTimelineItem.last().find(agTimelinePoint).offset().top;
+
+        i = agTop + agPosY - $(window).scrollTop();
+        a = agTimelineLineProgress.offset().top + agPosY - $(window).scrollTop();
+        n = agPosY - a + agOuterHeight / 2;
+        i <= agPosY + agOuterHeight / 2 && (n = i - a);
+        agTimelineLineProgress.css({height: n + "px"});
+
+        agTimelineItem.each(function () {
+          var agTop = $(this).find(agTimelinePoint).offset().top;
+
+          (agTop + agPosY - $(window).scrollTop()) < agPosY + .5 * agOuterHeight ? $(this).addClass('js-ag-active') : $(this).removeClass('js-ag-active');
+        });
+      }
+
+      function fnUpdateFrame() {
+        agFlag || requestAnimationFrame(fnUpdateWindow);
+        agFlag = true;
+      }
+
+    });
+  })(jQuery);
+</script>
+
+
+
+
+</head>
+
+<body>
+
+
+  <div class="ag-timeline-block">
+    <div class="ag-timeline_title-box">
+      <div class="ag-timeline_tagline">Timeline</div>
+      <div class="ag-timeline_title">No Flex</div>
+    </div>
+    <section class="ag-section">
+      <div class="ag-format-container">
+        <div class="js-timeline ag-timeline">
+          <div class="js-timeline_line ag-timeline_line">
+            <div class="js-timeline_line-progress ag-timeline_line-progress"></div>
+          </div>
+          <div class="ag-timeline_list">
+            <div class="js-timeline_item ag-timeline_item">
+              <div class="ag-timeline-card_box">
+                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                  <div class="ag-timeline-card_point">Step 1</div>
+                </div>
+                <div class="ag-timeline-card_meta-box">
+                  <div class="ag-timeline-card_meta">فيديو البورصه</div>
+                </div>
+              </div>
+              <div class="ag-timeline-card_item">
+                <div class="ag-timeline-card_inner">
+                  <div class="ag-timeline-card_img-box">
+                    <iframe width="100%" height="40%" src="https://www.youtube.com/embed/lCdGAmPH4l4?si=ZXRJuObBaFE5kLdF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  </div>
+                  <div class="ag-timeline-card_info">
+                    <div class="ag-timeline-card_title">فيديو البورصه</div>
+                    <div class="ag-timeline-card_desc" dir="rtl" lang="ar">
+                      ده فيديو البورصه بيعرف حضرتك اكتر عن مفهوم التداول و الاستثمار و ايه افضل المجالات
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="ag-timeline-card_arrow"></div>
+              </div>
+            </div>
+  
+            <div class="js-timeline_item ag-timeline_item">
+              <div class="ag-timeline-card_box">
+                <div class="ag-timeline-card_meta-box">
+                  <div class="ag-timeline-card_meta">جروبات التداول</div>
+                </div>
+                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                  <div class="ag-timeline-card_point">step 2</div>
+                </div>
+              </div>
+              <div class="ag-timeline-card_item">
+                <div class="ag-timeline-card_inner">
+                  <div class="ag-timeline-card_img-box">
+                    <img style="cursor:pointer" src="media/logo.jpg" alt="logo" width="100%" height="45%"></span>
+                  </div>
+                  <div class="ag-timeline-card_info">
+                    <div class="ag-timeline-card_title">جروبات التداول</div>
+                    <div class="ag-timeline-card_desc" dir="rtl" lang="ar">
+                      ممكن حضرتك تدخل جروبات البانكير المهتمه بالتداول و الاستثمار في منصه الواتس و التيليجرام
+                      <br>
+                      <center>
+                        <img class="groups-logo" src="logos/whatsapp.png" href="https://chat.whatsapp.com/GE5ZLZtMRaRFAtShjKt9II" width="14%">
+                        <img class="groups-logo" src="logos/telegram.png" href="https://t.me/elbankeer" width="14%">
+                      </center>
+                      </div>
+                  </div>
+                </div>
+                <div class="ag-timeline-card_arrow"></div>
+              </div>
+            </div>
+  
+            <div class="js-timeline_item ag-timeline_item">
+              <div class="ag-timeline-card_box">
+                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                  <div class="ag-timeline-card_point">step 3</div>
+                </div>
+                <div class="ag-timeline-card_meta-box">
+                  <div class="ag-timeline-card_meta">منصات التداول</div>
+                </div>
+              </div>
+              <div class="ag-timeline-card_item">
+                <div class="ag-timeline-card_inner">
+                  <div class="ag-timeline-card_img-box">
+                    
+                  </div>
+                  <div class="ag-timeline-card_info">
+                    <div class="ag-timeline-card_title">Season 11</div>
+                    <div class="ag-timeline-card_desc" dir="rtl" lang="ar">
+                      بعد ما شوفنا الفيديو و فهمنا ايه هي البورصه خلينا نشوف بقا نكلم عن انواع البورصه عندنا بورصه مصريه و عندنا بورصه عالميه 
+                      <li>بورصه مصريه زي منصه ثاندر و شراء اسهم شركات مصريه </li>
+                      <li>بورصه عالميه و هنبقا بقا يجي التداول الحقيقي انك بتستمثر عن طريق التداول في الدهب العالمي ،النفط و الفوركس وكمان بيتيح ليك شراء اسهم في شركات عالميه زي شركه تسلا
+                      </li>
+                  </div>
+                  </div>
+                </div>
+                <div class="ag-timeline-card_arrow"></div>
+              </div>
+            </div>
+  
+            <div class="js-timeline_item ag-timeline_item">
+              <div class="ag-timeline-card_box">
+                <div class="ag-timeline-card_meta-box">
+                  <div class="ag-timeline-card_meta">Season 10</div>
+                </div>
+                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                  <div class="ag-timeline-card_point">2019</div>
+                </div>
+              </div>
+              <div class="ag-timeline-card_item">
+                <div class="ag-timeline-card_inner">
+                  <div class="ag-timeline-card_img-box">
+                    <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/img-10.png" class="ag-timeline-card_img" width="640" height="360" alt="" />
+                  </div>
+                  <div class="ag-timeline-card_info">
+                    <div class="ag-timeline-card_title">Season 10</div>
+                    <div class="ag-timeline-card_desc" dir="rtl" lang="ar">
+                      مع التجربه افضل شغل تداول عن طريق MT4 / Mt5
+                      ممكن حضرتك تعمل سيرش عليهم لو حابب 
+                      احنا بندخل حضرتك  مع بروكر نقدر من خلاله نتربط بيهم ودا بيعتمد على حاجه اسمها Daily trader
+                      وبنختار طبعا حسابات اسلاميه من غير سوابينج  
+                      افضل بروكر ومنصه بتعمل دا هي منصه اكسنس
+                      
+                      <h3> الطريقه الصحيحه لدخول المجال </h3>
+                     <li> تدرس تشارت وتحليل فنى ودا احنا بنوفره بكورس التداول للمحترفين </li>
+                     <li> 
+                      تاخد توصيات وتيم كامل يتابع معاك واحنا  نوفر الخده ديه و بنقدر نقدملك باكدج كامله بتساعدك تبدا صح
+                     </li>
+                     
+                    </div>
+                  </div>
+                </div>
+                <div class="ag-timeline-card_arrow"></div>
+              </div>
+            </div>
+  
+            <div class="js-timeline_item ag-timeline_item">
+              <div class="ag-timeline-card_box">
+                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                  <div class="ag-timeline-card_point">2019</div>
+                </div>
+                <div class="ag-timeline-card_meta-box">
+                  <div class="ag-timeline-card_meta">Season 9</div>
+                </div>
+              </div>
+              <div class="ag-timeline-card_item">
+                <div class="ag-timeline-card_inner">
+                  <div class="ag-timeline-card_img-box">
+
+                  </div>
+                  <div class="ag-timeline-card_info">
+                    <div class="ag-timeline-card_title">Season 9</div>
+                    <div class="ag-timeline-card_desc" dir="rtl" lang="ar">
+                      منصه اكسينس بنرشحها بشده لان بيتوفر فيها التداول في : 
+                      <li> جولد </li>  <li> فوركس </li> <li> عملات رقميه </li>
+                      منصه محترمه جدا و حساب اسلامي و بتتميز بان مفهاش عموله تبيت صفقات للاسهم ولا الجولد 
+                      <li> الحد الادني للدخول في المنصه هو 151 دولار هو مبلغ كويس كا بدايه لو متوفر</li> 
+                      <li> لكن احنا بنفضل البدايه ب 600 دولار لو راس المال يسمح بحيث بيتخصص مدير حسابات و بتبقا اداره ماليه افضل</li>  
+                      <center>
+                        <a href=""><button>طريقه التسجيل</button></a>
+                      </center>
+                    </div>
+                  </div>
+                </div>
+                <div class="ag-timeline-card_arrow"></div>
+              </div>
+            </div>
+  
+            <div class="js-timeline_item ag-timeline_item">
+              <div class="ag-timeline-card_box">
+                <div class="ag-timeline-card_meta-box">
+                  <div class="ag-timeline-card_meta">Season 8</div>
+                </div>
+                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                  <div class="ag-timeline-card_point">2018</div>
+                </div>
+              </div>
+              <div class="ag-timeline-card_item">
+                <div class="ag-timeline-card_inner">
+                  <div class="ag-timeline-card_img-box">
+                    <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/img-8.png" class="ag-timeline-card_img" width="640" height="360" alt="" />
+                  </div>
+                  <div class="ag-timeline-card_info">
+                    <div class="ag-timeline-card_title">Season 8</div>
+                    <div class="ag-timeline-card_desc" dir="rtl" lang="ar">
+                      <h3> باكدج ال vip المجانيه </h3>  
+                      <li>🌹VIP تشانل (جولد -فوركس-عملات رقميه-اسهم) مجانا .</li>
+                      <li>🌹جروب مناقشات VIP تشانل.
+                      <li>🌹بنكون معاك خطوه بخطوه ومتابعه جيده ،ومستمره وفعاله ٤ ايام كامله 🙏
+                      <li>🌹٤كورس باينانس مجانا .
+                      <li>🌹كورس التداول للمبتدءين مجانا (٢٢فيديو).
+                      <li>🌹٦-كورس التداول للمحترفين ٧٠٪؜ خصم.
+                      <li>🌹لايف شهرى .
+                      <li>🌹٨-جلسه استشاريه ٪؜ خصم.
+                      <li>🌹فيديو تطبيق صفقات خطوه بخطوه </li>  
+                      <li>🌹2 فيديو متكاملين لمنصه اكسنس
+                      
+                    </div>
+                  </div>
+                </div>
+                <div class="ag-timeline-card_arrow"></div>
+              </div>
+            </div>
+  
+            <div class="js-timeline_item ag-timeline_item">
+              <div class="ag-timeline-card_box">
+                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                  <div class="ag-timeline-card_point">2018</div>
+                </div>
+                <div class="ag-timeline-card_meta-box">
+                  <div class="ag-timeline-card_meta">Season 7</div>
+                </div>
+              </div>
+              <div class="ag-timeline-card_item">
+                <div class="ag-timeline-card_inner">
+                  <div class="ag-timeline-card_img-box">
+                    <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/img-7.png" class="ag-timeline-card_img" width="640" height="360" alt="" />
+                  </div>
+                  <div class="ag-timeline-card_info">
+                    <div class="ag-timeline-card_title">Season 7</div>
+                    <div class="ag-timeline-card_desc">
+                      Quisque rutrum. Aenean imperdiet. Etiam ultricies
+                      nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
+                      Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet
+                      adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar,
+                      hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.
+                    </div>
+                  </div>
+                </div>
+                <div class="ag-timeline-card_arrow"></div>
+              </div>
+            </div>
+  
+            <div class="js-timeline_item ag-timeline_item">
+              <div class="ag-timeline-card_box">
+                <div class="ag-timeline-card_meta-box">
+                  <div class="ag-timeline-card_meta">Season 6</div>
+                </div>
+                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                  <div class="ag-timeline-card_point">2017</div>
+                </div>
+              </div>
+              <div class="ag-timeline-card_item">
+                <div class="ag-timeline-card_inner">
+                  <div class="ag-timeline-card_img-box">
+                    <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/img-6.png" class="ag-timeline-card_img" width="640" height="360" alt="" />
+                  </div>
+                  <div class="ag-timeline-card_info">
+                    <div class="ag-timeline-card_title">Season 6</div>
+                    <div class="ag-timeline-card_desc">
+                      Vivamus elementum semper nisi. Aenean vulputate eleifend
+                      tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                      Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra
+                      nulla ut metus varius laoreet. Quisque rutrum.
+                    </div>
+                  </div>
+                </div>
+                <div class="ag-timeline-card_arrow"></div>
+              </div>
+            </div>
+  
+            <div class="js-timeline_item ag-timeline_item">
+              <div class="ag-timeline-card_box">
+                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                  <div class="ag-timeline-card_point">2017</div>
+                </div>
+                <div class="ag-timeline-card_meta-box">
+                  <div class="ag-timeline-card_meta">Season 5</div>
+                </div>
+              </div>
+              <div class="ag-timeline-card_item">
+                <div class="ag-timeline-card_inner">
+                  <div class="ag-timeline-card_img-box">
+                    <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/img-5.png" class="ag-timeline-card_img" width="640" height="360" alt="" />
+                  </div>
+                  <div class="ag-timeline-card_info">
+                    <div class="ag-timeline-card_title">Season 5</div>
+                    <div class="ag-timeline-card_desc">
+                      Donec pede justo, fringilla
+                      vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                      venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer
+                      tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
+                      tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                      Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra
+                      nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies
+                      nisi vel augue. Curabitur ullamcorper ultricies nisi.
+                    </div>
+                  </div>
+                </div>
+                <div class="ag-timeline-card_arrow"></div>
+              </div>
+            </div>
+  
+            <div class="js-timeline_item ag-timeline_item">
+              <div class="ag-timeline-card_box">
+                <div class="ag-timeline-card_meta-box">
+                  <div class="ag-timeline-card_meta">Season 4</div>
+                </div>
+                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                  <div class="ag-timeline-card_point">2016</div>
+                </div>
+              </div>
+              <div class="ag-timeline-card_item">
+                <div class="ag-timeline-card_inner">
+                  <div class="ag-timeline-card_img-box">
+                    <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/img-4.png" class="ag-timeline-card_img" width="640" height="360" alt="" />
+                  </div>
+                  <div class="ag-timeline-card_info">
+                    <div class="ag-timeline-card_title">Season 4</div>
+                    <div class="ag-timeline-card_desc">
+                      Nullam dictum felis eu pede mollis pretium. Integer
+                      tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
+                      tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                      Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra
+                      nulla ut metus varius laoreet.
+                    </div>
+                  </div>
+                </div>
+                <div class="ag-timeline-card_arrow"></div>
+              </div>
+            </div>
+  
+            <div class="js-timeline_item ag-timeline_item">
+              <div class="ag-timeline-card_box">
+                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                  <div class="ag-timeline-card_point">2016</div>
+                </div>
+                <div class="ag-timeline-card_meta-box">
+                  <div class="ag-timeline-card_meta">Season 3</div>
+                </div>
+              </div>
+              <div class="ag-timeline-card_item">
+                <div class="ag-timeline-card_inner">
+                  <div class="ag-timeline-card_img-box">
+                    <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/img-3.png" class="ag-timeline-card_img" width="640" height="360" alt="" />
+                  </div>
+                  <div class="ag-timeline-card_info">
+                    <div class="ag-timeline-card_title">Season 3</div>
+                    <div class="ag-timeline-card_desc">
+                      Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus.
+                      Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet
+                      adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar,
+                      hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae
+                      sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget
+                      eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh.
+                    </div>
+                  </div>
+                </div>
+                <div class="ag-timeline-card_arrow"></div>
+              </div>
+            </div>
+  
+            <div class="js-timeline_item ag-timeline_item">
+              <div class="ag-timeline-card_box">
+                <div class="ag-timeline-card_meta-box">
+                  <div class="ag-timeline-card_meta">Season 2</div>
+                </div>
+                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                  <div class="ag-timeline-card_point">2015</div>
+                </div>
+              </div>
+              <div class="ag-timeline-card_item">
+                <div class="ag-timeline-card_inner">
+                  <div class="ag-timeline-card_img-box">
+                    <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/img-2.png" class="ag-timeline-card_img" width="640" height="360" />
+                  </div>
+                  <div class="ag-timeline-card_info">
+                    <div class="ag-timeline-card_title">Season 2</div>
+                    <div class="ag-timeline-card_desc">
+                      Aenean vulputate eleifend
+                      tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                      Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra
+                      nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies
+                      nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui.
+                    </div>
+                  </div>
+                </div>
+                <div class="ag-timeline-card_arrow"></div>
+              </div>
+            </div>
+  
+            <div class="js-timeline_item ag-timeline_item">
+              <div class="ag-timeline-card_box">
+                <div class="js-timeline-card_point-box ag-timeline-card_point-box">
+                  <div class="ag-timeline-card_point">2015</div>
+                </div>
+                <div class="ag-timeline-card_meta-box">
+                  <div class="ag-timeline-card_meta">Season 1</div>
+                </div>
+              </div>
+              <div class="ag-timeline-card_item">
+                <div class="ag-timeline-card_inner">
+                  <div class="ag-timeline-card_img-box">
+                    <img src="https://raw.githubusercontent.com/SochavaAG/example-mycode/master/pens/timeline/images/img-1.png" class="ag-timeline-card_img" width="640" height="360" />
+                  </div>
+                  <div class="ag-timeline-card_info">
+                    <div class="ag-timeline-card_title">Season 1</div>
+                    <div class="ag-timeline-card_desc">
+                      Donec pede justo, fringilla
+                      vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a,
+                      venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer
+                      tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend
+                      tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim.
+                      Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus.
+                    </div>
+                  </div>
+                </div>
+                <div class="ag-timeline-card_arrow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</body>
+</html>

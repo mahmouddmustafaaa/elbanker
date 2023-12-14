@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <title> Consultation </title>
+
+    <meta charset="UTF-8">
+    <meta name="description" content="el-banker website">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="mahmoud mustafa - mohamed madeh">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=' rel='stylesheet'>
+    <link rel="icon" type="images/x-icon" href="media/logo2.png" />
+
+    <link rel="stylesheet" href="consult.css">
+    <script src="java-script.js"></script>
+
+
+</head>
+
+<body>
+
+    <header >
+
+        <nav id="navbar">
+            <div id="sidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="Default.html"> الرئيسيه </a>
+                <a href="trading_course.html">كورس التدول </a>
+                <a href="Trading.html">التداول </a>
+                <a href="consult.html">استشاره </a>
+                <a href="news.html"> اخبار </a>
+                <a href="vip_channel.html"> Vip channel </a>
+                <a href="contact.html"> Contact US </a>
+            </div>
+            <img class="nav-bar-logo" style="cursor:pointer" src="media/logo2.png" alt="logo" width="150px"></span>
+            <span onclick="openNav()"> 
+            <img class="nav-bar-menu" style="cursor:pointer" src="media/nav-bar.png" alt="nav bar menu"  width="40px"></span>
+            
+
+            
+
+            <script>
+                /* Open the sidenav */
+                function openNav() {
+                    document.getElementById("sidenav").style.width = "100%";
+                }
+
+                /* Close/hide the sidenav */
+                function closeNav() {
+                    document.getElementById("sidenav").style.width = "0";
+                }
+            </script>
+            <script>
+                var prevScrollpos = window.pageYOffset;
+                window.onscroll = function() {
+                    var currentScrollPos = window.pageYOffset;
+                    if (prevScrollpos > currentScrollPos) {
+                        document.getElementById("navbar").style.top = "0";
+                    } else {
+                        document.getElementById("navbar").style.top = "-200px";
+                    }
+                    prevScrollpos = currentScrollPos;
+                }
+            </script>
+        </nav>    
+<!-- Calendly inline widget begin -->
+<div class="calendly-inline-widget" data-url="https://calendly.com/mahmoud3mustafa4/30min" style="min-width:320px;height:700px;"></div>
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Calendly inline widget end -->
+                            <!------------------------------Footer---------------------->
+                <footer>
+                        <div class="footer-main ">
+                            <p class="web-map "> Web map
+                                <a class="footer-decoration " href="Default.html"> Home </a>
+                                <a class="footer-decoration " href="trading_course.html">trading_course</a>
+                                <a class="footer-decoration " href="Trading.html">Trading</a>
+                                <a class="footer-decoration " href="consult.html">Consultation</a>
+                                <a class="footer-decoration " href="news.html">News</a>
+                                <a class="footer-decoration " href="vip_channel.html">Vip-channel</a>
+                                <a class="footer-decoration " href="contact.html"> Linktree </a>
+                            </p>
+                            <a class="top-button " href="#top "><img src="logos/upload.png " style="vertical-align:middle " id="fixedbutton2 " style="float:center " alt="up-arrow " width="4% "></a>
+                            <p class="rights ">© All rights reserved for El-Banker 2022</p>
+                            <p> Made by<a class="footer-decoration " href=" https://wa.me/message/WZAULANJ56VKE1 " target="_blank"> Montu Programming Services</a></p>
+                        </div>
+                </footer>
+
+</body>
+</html>
