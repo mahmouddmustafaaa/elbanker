@@ -27,6 +27,11 @@
         width: 10%;
         padding-left: 30px;
     }
+@media screen and (max-width: 500px) {
+  .nav-bar-logo1{
+    width: 20%
+  }
+}
     .nav-bar-logo2 {
       padding-top: 2%;
       width: 23%;
@@ -199,10 +204,11 @@ h3{
     text-align: center;
     font-size: 70px;
     margin-bottom: 20px;
-padding-top: 130px;
+padding-top: 10%;
 color: #bc473b;
 font-weight: 900;
   }
+
   #timeline p.leader {
     text-align: center;
     max-width: 90%;
@@ -433,4 +439,9 @@ padding-top: 6%;
           color: rgb(255, 255, 255);
           background-color: #55555500;
           padding: 5px;
+      }
+      @media screen and (max-width: 500px) {
+      footer{
+        font-size: 4vw;
+      }
       }
