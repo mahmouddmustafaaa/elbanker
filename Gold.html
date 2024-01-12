@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title> El-banker Gold Prices</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="el-banker website">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="mahmoud mustafa - mohamed madeh">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=' rel='stylesheet'>
+    <link rel="icon" type="images/x-icon" href="media/logo2.png" />
+    <link rel="stylesheet" href="gold.css">
+
+</head>
+<header>
+  <nav id="navbar">
+  <ul >
+      <a href="Default.html"> <li class="nav-bar-logo"><img src="home/Layer 2.png" style="width: 25%;"></li></a>
+      <div class="right-dropdown">
+      <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">الخدمات</a>
+      <div div class="dropdown-content" dir="rtl" lang="ar">
+          <a href="#">استشاره</a>
+          <a href="#">تداول</a>
+          <a href="#">بوست التداول</a>
+          <a href="#">الذهب</a>
+      </div>
+          </div>
+          </li>
+          <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">الدورات</a>
+          <div class="dropdown-content" dir="rtl" lang="ar">
+          <a href="#">كورس التداول للمبتدئين</a>
+          <a href="#">كورس التداول للمحترفين</a>
+          </div>
+          </li>
+          <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">VIP</a>
+          <div class="dropdown-content" dir="rtl" lang="ar">
+              <a href="#">VIP Channel</a>
+              <a href="#">VIP Services</a>
+          </div>
+          </li>
+      <li><a href="#news">تواصل معنا</a></li>
+      <li><a href="#news"> News </a></li>
+
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+      </a>
+  </ul>
+  </nav>
+</header>
+<hr>
+<body>
+<center>
+  <img src="media/banner-Ad.jpg" class="ad-img" alt="Flowers in Chania" height="120px" width="80%">
+</center>
+<div class="widgets">
+<div class="Graph-widget">
+<!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
+  {
+  "symbol": "CAPITALCOM:GOLD",
+  "width": "100%",
+  "height": "100%",
+  "locale": "en",
+  "dateRange": "12M",
+  "colorTheme": "light",
+  "isTransparent": false,
+  "autosize": true,
+  "largeChartUrl": ""
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+</div>
+
+<div class="right-widget">
+  <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+    <div class="tradingview-widget-container__widget"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>
+    {
+    "interval": "1m",
+    "width": "160px",
+    "isTransparent": false,
+    "height": "160px",
+    "symbol": "OANDA:XAUUSD",
+    "showIntervalTabs": true,
+    "displayMode": "single",
+    "locale": "en",
+    "colorTheme": "dark"
+  }
+    </script>
+  </div>
+  <!-- TradingView Widget END -->
+  <br>
+  <center> 
+  </div>
+</div>
+  <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-tickers.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "US 100"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR to USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    }
+  ],
+  "isTransparent": false,
+  "showSymbolLogo": true,
+  "colorTheme": "light",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+</center>
+</body>
+</html>
